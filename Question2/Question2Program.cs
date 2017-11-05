@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace Question2
 {
@@ -32,9 +33,83 @@ namespace Question2
         /// </summary>
         /// <param name="args"></param>
 
+        private static string a = "1232", b = "201"; 
+
         static void Main(string[] args)
         {
+            Console.WriteLine("Question #2:\n");
+
+            //Test cases:
+            Console.WriteLine("\"112\", \"111\": " + larger_than( "112", "111" )); //should return True
+            Console.WriteLine("\"232\", \"233\": " + larger_than("232", "233")); //should return False
+            Console.WriteLine("\"525\", \"1111\": " + larger_than( "525", "1111" )); //should return False
+            Console.WriteLine("\"11\", \"0\": " + larger_than( "11", "0" )); //should return True
+            Console.WriteLine("\"0\", \"0\": " + larger_than("0", "0")); //should return False
+            Console.WriteLine("\"0\", \"1\": " + larger_than("0", "1")); //should return False
+            Console.WriteLine("\"1\", \"1\": " + larger_than( "1", "1" )); //should return False
+
             Console.ReadKey();
         }
+
+        /// <summary>
+        /// Tunction that's called "larger_than" which takes these two strings as inputs 
+        /// and it turns true if the first number is larger than the second one.
+        /// No empty strings or negative numbers.
+        /// Tries to solve the problem without converting a string to a number.
+        /// If numbers are the same >>> return FALSE;
+        /// No decimal points
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        private static bool larger_than(string a, string b)
+        {
+            bool isLarger = true;
+
+            if (a.Equals(b)) //Two equal strings
+            {
+                isLarger = false;
+                Debug.WriteLine("Case #1: " + isLarger);
+            }
+            else if (a.Length == b.Length) //No decimal point and length of a == b
+            {
+                for (int i = 0; i < a.Length; i++)
+                {
+                    if (a.Substring(i, 1) == b.Substring(i, 1))
+                    {
+                        continue;
+                    }
+                    else if (int.Parse(a.Substring(i, 1)) > int.Parse(b.Substring(i, 1)))
+                    {
+                        isLarger = true;
+                        Debug.WriteLine("Case #2: " + isLarger);
+                        break;
+                    }
+                    else
+                    {
+                        isLarger = false;
+                        Debug.WriteLine("Case #3: " + isLarger);
+                        break;
+                    }
+                }
+            }
+            else if (a.Length != b.Length) //No decimal point and length of a != b
+            {
+                if (a.Length > b.Length) //a is longer
+                {
+                    isLarger = true;
+                    Debug.WriteLine("Case #4: " + isLarger);
+                }
+                else //b is longer
+                {
+                    isLarger = false;
+                    Debug.WriteLine("Case #5: " + isLarger);
+                }
+            }
+
+                return isLarger;
+        }
+
+
     }
 }
