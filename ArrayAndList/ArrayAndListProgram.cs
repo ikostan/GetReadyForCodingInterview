@@ -106,7 +106,7 @@ namespace ArrayAndList
         private static int CalcTotal(int[] arr)
         {
             int sum = 0;
-
+            
             foreach (int item in arr)
             {
                 sum += item;
