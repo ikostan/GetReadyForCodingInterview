@@ -35,7 +35,7 @@ namespace Strings
             string a_string = "ABC";
             Console.WriteLine(a_string);
 
-            //Problem 2: From the string called b_string, defined below, retrieve and print the second character.
+            //Problem 2: From the string called b_string, defined below, retrieve and print the second character (should be E).
             string b_string = "DEF";
             Console.WriteLine(b_string.Substring(1, 1));
 
@@ -60,10 +60,40 @@ namespace Strings
             //Assume that the two strings are not empty and have the same length
      
             string a = "abc", b = "cba", c = "sdf";
-            Console.WriteLine($"{a} and {b} are reversed: " + IsReverse(a, b));
-            Console.WriteLine($"{a} and {c} are reversed: " + IsReverse(a, c));
+            Console.WriteLine($"'{a}' and '{b}' are reversed: " + IsReverse(a, b));
+            Console.WriteLine($"'{a}' and '{c}' are reversed: " + IsReverse(a, c));
 
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// A function that takes two strings and returns True if they are reverses of each other
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static bool IsReverseUsingArray(string a, string b)
+        {
+            bool isReverse = true;
+
+            if (a.Length != b.Length)
+            {
+                isReverse = false;
+            }
+            else
+            {
+                char[] chrArr = b.ToCharArray();
+                Array.Reverse(chrArr);
+                b = new String(chrArr);
+                //Console.WriteLine($"Reversed: {b}");
+
+                if (!a.Equals(b))
+                {
+                    isReverse = false;
+                }
+            }
+
+            return isReverse;
         }
 
         /// <summary>
@@ -82,14 +112,18 @@ namespace Strings
             }
             else
             {
-                char[] chrArr = b.ToCharArray();
-                Array.Reverse(chrArr);
-                b = new String(chrArr);
-                //Console.WriteLine($"Reversed: {b}");
-
-                if (!a.Equals(b))
+                int bi = a.Length - 1;
+                for (int i = 0; i < a.Length; i++)
                 {
-                    isReverse = false;
+                    if (a.Substring(i, 1).Equals(b.Substring(bi, 1)))
+                    {
+                        bi--;
+                    }
+                    else
+                    {
+                        isReverse = false;
+                        break;
+                    }
                 }
             }
 
