@@ -27,23 +27,42 @@ namespace Question1
         /// </summary>
         /// <param name="args"></param>
 
-        private static int[] arr1, arr2, arr3, arr4;
+        private static int[] arr1, arr2, arr3, arr4, arr5, arr6;
 
         static void Main(string[] args)
         {
             Console.WriteLine("Question #1:\n");
 
             arr1 = new int[]{ 1, 3, 4, 5, 0, 2 };
+            //Console.WriteLine("The second largest number is: " + SecondLargestUsingSort(arr1));
             Console.WriteLine("The second largest number is: " + SecondLargest(arr1));
+            Console.WriteLine();
 
             arr2 = new int[] { };
+            //Console.WriteLine("The second largest number is: " + SecondLargestUsingSort(arr2));
             Console.WriteLine("The second largest number is: " + SecondLargest(arr2));
+            Console.WriteLine();
 
             arr3 = new int[] { 1 };
+            //Console.WriteLine("The second largest number is: " + SecondLargestUsingSort(arr3));
             Console.WriteLine("The second largest number is: " + SecondLargest(arr3));
+            Console.WriteLine();
 
             arr4 = new int[] { 2, 2, 1 };
+            //Console.WriteLine("The second largest number is: " + SecondLargestUsingSort(arr4));
             Console.WriteLine("The second largest number is: " + SecondLargest(arr4));
+            Console.WriteLine();
+
+            arr5 = new int[] { -2, -1 };
+            //Console.WriteLine("The second largest number is: " + SecondLargestUsingSort(arr5));
+            Console.WriteLine("The second largest number is: " + SecondLargest(arr5));
+            Console.WriteLine();
+
+            arr6 = new int[] {1, -2, 3, 4 };
+            //Console.WriteLine("The second largest number is: " + SecondLargestUsingSort(arr6));
+            Console.WriteLine("The second largest number is: " + SecondLargest(arr6));
+            Console.WriteLine();
+
 
             Console.ReadKey();
         }
@@ -53,7 +72,7 @@ namespace Question1
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>
-        private static int SecondLargest(int[] arr)
+        private static int SecondLargestUsingSort(int[] arr)
         {
             if (arr.Length == 0 || arr.Length == 1) //Empty array OR has only one member
             {
@@ -63,6 +82,48 @@ namespace Question1
             {
                 Array.Sort(arr);
                 return arr[arr.Length - 2];
+            }
+        }
+
+        /// <summary>
+        /// Function which takes the the given array and finds and returns the second largest number in this array.
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        private static int? SecondLargest(int[] arr)
+        {
+            if (arr.Length == 0 || arr.Length == 1) //Empty array OR has only one member
+            {
+                return 0;
+            }
+            else
+            {
+                //The value type may be used as the basis for a nullable type:
+                int? largest = null, secondLargest = null;
+
+                foreach (int item in arr)
+                {
+                    if (largest == null)
+                    {
+                        largest = item;
+                        continue;
+                    }
+                    else if (largest < item)
+                    {
+                        secondLargest = largest;
+                        largest = item;
+                    }
+                    else if (secondLargest == null)
+                    {
+                        secondLargest = item;
+                    }
+                    else if (secondLargest < item)
+                    {
+                        secondLargest = item;
+                    }
+                }
+
+                return (secondLargest == null) ? 0 : secondLargest;
             }
         }
 
