@@ -5,7 +5,7 @@ namespace ArrayAndList
     class ArrayAndListProgram
     {
 
-        static string[] a_list;
+        static string[] a_list, c_list;
         static int[] b_list;
 
         static void Main(string[] args)
@@ -20,6 +20,10 @@ namespace ArrayAndList
             b_list = new int[] { 0, 0, 0 };
             ChangeElement(b_list, 1, 1);
             RunAsList(b_list);
+
+            //Problem 3: Iterate over each element in c_list and print it using the foreach loop.
+            c_list = new string[] { "item0", "item1", "item2" };
+            RunAsList(c_list);
 
             Console.ReadKey();
         }
