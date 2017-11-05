@@ -12,16 +12,16 @@ great way to sharpen your programming skills.
 
 ## Topics include:
 
-### Honing your problem-solving skills
-### Preparing for a coding interview
-### Using arrays to solve interview problems
-### Working with and comparing strings
-### Using two-dimensional arrays
-### Learning the importance of time complexity in code
-### Using Big-O notation to describe the time complexity of code
-### Using hash tables 
-### Asking clarifying questions during your interview
-### Finding the most efficient solutions to problems
-### Testing your proposed code solutions
+#### Honing your problem-solving skills
+#### Preparing for a coding interview
+#### Using arrays to solve interview problems
+#### Working with and comparing strings
+#### Using two-dimensional arrays
+#### Learning the importance of time complexity in code
+#### Using Big-O notation to describe the time complexity of code
+#### Using hash tables 
+#### Asking clarifying questions during your interview
+#### Finding the most efficient solutions to problems
+#### Testing your proposed code solutions
 
 ### Source: https://www.lynda.com/Software-Development-tutorials/Get-Ready-Your-Coding-Interview/576698-2.html
