@@ -6,11 +6,10 @@ namespace ArrayAndList
     {
 
         static string[] a_list, c_list;
-        static int[] b_list;
+        static int[] b_list, e_list;
 
         static void Main(string[] args)
         {
-
             //Problem 1: Initialize a new list called a_list with the elements ["item1", "item2", "item3"]
             a_list = new string[] { "item 1", "item 2", "item 3" };
             //RunByIndex(a_list);
@@ -27,6 +26,12 @@ namespace ArrayAndList
 
             //Problem 4: Iterate over each element in d_list and print it using the for loop.
             RunByIndex(b_list);
+
+            //Problem 5: Find the sum of e_list, which contains: [32, 55, 710, 1]
+            e_list = new int[] { 32, 55, 710, 1 };
+            Console.WriteLine("The sum is: " + CalcTotal(e_list));
+
+
 
             Console.ReadKey();
         }
@@ -91,6 +96,23 @@ namespace ArrayAndList
             {
                 arr[index] = newValue;
             }
+        }
+
+        /// <summary>
+        /// Find the sum of an array
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        private static int CalcTotal(int[] arr)
+        {
+            int sum = 0;
+
+            foreach (int item in arr)
+            {
+                sum += item;
+            }
+
+            return sum;
         }
 
     }
