@@ -27,14 +27,23 @@ namespace Question1
         /// </summary>
         /// <param name="args"></param>
 
-        private static int[] arr;
+        private static int[] arr1, arr2, arr3, arr4;
 
         static void Main(string[] args)
         {
             Console.WriteLine("Question #1:\n");
 
-            arr = new int[]{ 1, 3, 4, 5, 0, 2 };
-            Console.WriteLine("The second largest number is: " + SecondLargest(arr));
+            arr1 = new int[]{ 1, 3, 4, 5, 0, 2 };
+            Console.WriteLine("The second largest number is: " + SecondLargest(arr1));
+
+            arr2 = new int[] { };
+            Console.WriteLine("The second largest number is: " + SecondLargest(arr2));
+
+            arr3 = new int[] { 1 };
+            Console.WriteLine("The second largest number is: " + SecondLargest(arr3));
+
+            arr4 = new int[] { 2, 2, 1 };
+            Console.WriteLine("The second largest number is: " + SecondLargest(arr4));
 
             Console.ReadKey();
         }
@@ -46,7 +55,7 @@ namespace Question1
         /// <returns></returns>
         private static int SecondLargest(int[] arr)
         {
-            if (arr.Length == 0)
+            if (arr.Length == 0 || arr.Length == 1) //Empty array OR has only one member
             {
                 return 0;
             }

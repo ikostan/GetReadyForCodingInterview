@@ -2,7 +2,7 @@
 
 namespace ArrayAndList
 {
-    class ArrayAndListProgram
+    class ArraysProgram
     {
 
         static string[] a_list, c_list;
