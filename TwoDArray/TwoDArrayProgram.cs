@@ -44,9 +44,9 @@ namespace TwoDArray
             }
 
             // Problem 4: Iterate over each item in d_2d and print it using the FOR syntax.
-            for (int row = 0; row < 2; row++)
+            for (int row = 0; row < a_2d.Rank; row++)
             {
-                for (int col = 0; col < 3; col++)
+                for (int col = 0; col < a_2d.GetLength(row); col++)
                 {
                     Console.WriteLine(a_2d[row, col]);
                 }
@@ -69,9 +69,11 @@ namespace TwoDArray
 
             Console.WriteLine($"Sum of the diagonal elements: {SumDiagonal(b_2d)}");
 
-            //Console.WriteLine($"Length: {b_2d.Length}");
-            //Console.WriteLine($"Long Length: {b_2d.LongLength}");
-            //Console.WriteLine($"Long Length: {b_2d.GetLength(1)}");
+            //Console.WriteLine($"\nTest length (debug only):\n");
+            //Console.WriteLine($"Total Length: {b_2d.Length}");
+            //Console.WriteLine($"Total Length: {b_2d.LongLength}");
+            //Console.WriteLine($"Rank (number of dimentions): {b_2d.Rank}");
+            //Console.WriteLine($"Row Length (number of columns in row): {b_2d.GetLength(1)}");
 
 
             Console.ReadKey();
