@@ -22,8 +22,7 @@ namespace BigO
         /// Whether it's Python, Java, or C++. One way to find the time a given function takes to run is by running experiments. 
         /// You can do this by running this function with inputs, with different sizes, and measuring how much time it takes 
         /// to complete each time. But of course, this option is usually not available in a coding interview setting. 
-        /// Or alternatively, you can get a rough idea of how long it takes to some kind of analysis without running 
-        /// this function on a computer.
+        /// Or alternatively, you can get a rough idea of how long it takes to some kind of analysis without running this function on a computer.
         ///
         /// And Time Complexity and Big-O Notation are tools for exactly doing that.
         /// 
