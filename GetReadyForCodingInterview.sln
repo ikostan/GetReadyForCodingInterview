@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoDArray", "TwoDArray\TwoD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questin3", "Questin3\Questin3.csproj", "{5DBA951E-F649-41B4-861E-2C14A0BCB1D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigO", "BigO\BigO.csproj", "{C3964D3B-FB52-4167-B83D-465125427099}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{5DBA951E-F649-41B4-861E-2C14A0BCB1D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DBA951E-F649-41B4-861E-2C14A0BCB1D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DBA951E-F649-41B4-861E-2C14A0BCB1D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3964D3B-FB52-4167-B83D-465125427099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3964D3B-FB52-4167-B83D-465125427099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3964D3B-FB52-4167-B83D-465125427099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3964D3B-FB52-4167-B83D-465125427099}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
