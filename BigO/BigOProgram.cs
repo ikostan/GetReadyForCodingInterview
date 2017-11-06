@@ -26,6 +26,12 @@ namespace BigO
         ///
         /// And Time Complexity and Big-O Notation are tools for exactly doing that.
         /// 
+        /// Time complexity types:
+        /// 
+        /// 1. Linear - the time it takes to run this function grows linearly, or like a straight line. And, so, this function is said to have linear time complexity.
+        /// 2. Constant - the function takes a constant amount of time regardless of the input. That's why this function is said to have constant time complexity.
+        /// 3. Quadratic - the shape of this line is similar to the function n squared, which is a quadratic function. And, so, this function has quadratic time complexity.
+        /// 
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
