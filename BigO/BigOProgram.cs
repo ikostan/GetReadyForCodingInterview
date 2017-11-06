@@ -28,9 +28,13 @@ namespace BigO
         /// 
         /// Time complexity types:
         /// 
-        /// 1. Linear - the time it takes to run this function grows linearly, or like a straight line. And, so, this function is said to have linear time complexity.
-        /// 2. Constant - the function takes a constant amount of time regardless of the input. That's why this function is said to have constant time complexity.
-        /// 3. Quadratic - the shape of this line is similar to the function n squared, which is a quadratic function. And, so, this function has quadratic time complexity.
+        /// 1. Linear (t => an + b = O(n)) - the time it takes to run this function grows linearly, or like a straight line. And, so, this function is said to have linear time complexity.
+        /// 2. Constant (t => constant x 1 = O(1)) - the function takes a constant amount of time regardless of the input. That's why this function is said to have constant time complexity.
+        /// 3. Quadratic (t => an2 + c = O(n2)) - the shape of this line is similar to the function n squared, which is a quadratic function. And, so, this function has quadratic time complexity.
+        /// 
+        /// - [Instructor] Big-O Notation is a way of indicating how complex a function is and how much time 
+        /// it takes to run your function. It's also a convenient way to express the time complexity of a function, 
+        /// and it comes up a lot in a coding interview.
         /// 
         /// </summary>
         /// <param name="args"></param>
