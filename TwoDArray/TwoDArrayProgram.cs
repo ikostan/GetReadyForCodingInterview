@@ -24,7 +24,91 @@ namespace TwoDArray
 
         static void Main(string[] args)
         {
+            Console.WriteLine("2D Arrays:\n");
+
+            // Problem 1: Initialize a new 2D array with[1, 2, 3] in the first row 
+            // and [5, 6, 7] in the second row.
+            // Store it in a new variable called a_2d.
+            int[,] a_2d = new int[2, 3] {
+                { 1, 2, 3 },
+                { 5, 6, 7 }
+            };
+
+            // Problem 2: From the 2D array called b_2d, defined below, replace the number 6 with the number 99.
+            a_2d[1, 1] = 99;
+
+            //Problem 3: Iterate over each item in c_2d and print it using the FOREACH syntax.
+            foreach (var item in a_2d)
+            {
+                Console.WriteLine(item);
+            }
+
+            // Problem 4: Iterate over each item in d_2d and print it using the FOR syntax.
+            for (int row = 0; row < 2; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    Console.WriteLine(a_2d[row, col]);
+                }
+            }
+
+            // Problem 5: You're given a 2D array with the same number of rows and columns.  
+            // Write a function that adds up the diagonal elements and returns the sum.
+            // For example, you're given the following 2D array:
+            //
+            // [[1, 2, 3],  
+            //  [4, 5, 6],  
+            //  [7, 8, 9]]
+            //
+            // "The diagonal elements are 1, 5, and 9, so your function should return 15."
+            int[,] b_2d = new int[3, 3] {
+                { 1, 2, 3 },
+                { 4, 5, 6 },
+                { 7, 8, 9 }
+            };
+
+            Console.WriteLine($"Sum of the diagonal elements: {SumDiagonal(b_2d)}");
+
+            //Console.WriteLine($"Length: {b_2d.Length}");
+            //Console.WriteLine($"Long Length: {b_2d.LongLength}");
+            //Console.WriteLine($"Long Length: {b_2d.GetLength(1)}");
+
+
             Console.ReadKey();
         }
+
+        /// <summary>
+        /// Function that adds up the diagonal elements and returns the sum
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        private static int SumDiagonal(int[,] arr)
+        {
+            int rowIndx = 0;
+            int indx = 0;
+            int sum = 0;
+
+            while (true)
+            {
+                try
+                {
+                    sum += arr[rowIndx, indx];
+
+                    //Debug only:
+                    System.Diagnostics.Debug.WriteLine(
+                        $"rowIndx: {rowIndx} colIndx: {indx} number:{arr[rowIndx, indx]} sum: {sum}");
+
+                    indx++;
+                    rowIndx++;
+                }
+                catch (System.IndexOutOfRangeException)
+                {
+                    break;
+                }
+            }
+
+            return sum;
+        }
+
     }
 }
