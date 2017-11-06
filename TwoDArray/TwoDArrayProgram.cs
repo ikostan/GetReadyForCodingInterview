@@ -43,20 +43,20 @@ namespace TwoDArray
                 Console.WriteLine(item);
             }
 
-            // Problem 4: Iterate over each item in d_2d and print it using the FOR syntax.
-            for (int row = 0; row < a_2d.Rank; row++)
+            //Problem 4: Iterate over each item in d_2d and print it using the FOR syntax.
+            for (int row = 0; row < a_2d.GetLength(0); row++)
             {
-                for (int col = 0; col < a_2d.GetLength(row); col++)
+                for (int col = 0; col < a_2d.GetLength(1); col++)
                 {
                     Console.WriteLine(a_2d[row, col]);
                 }
             }
 
             // Problem 5: You're given a 2D array with the same number of rows and columns.  
-            // Write a function that adds up the diagonal elements and returns the sum.
-            // For example, you're given the following 2D array:
+            //Write a function that adds up the diagonal elements and returns the sum.
+            //For example, you're given the following 2D array:
             //
-            // [[1, 2, 3],  
+            //[[1, 2, 3],  
             //  [4, 5, 6],  
             //  [7, 8, 9]]
             //
@@ -66,6 +66,14 @@ namespace TwoDArray
                 { 4, 5, 6 },
                 { 7, 8, 9 }
             };
+
+            for (int row = 0; row < b_2d.GetLength(0); row++)
+            {
+                for (int col = 0; col < b_2d.GetLength(1); col++)
+                {
+                    Console.WriteLine(b_2d[row, col]);
+                }
+            }
 
             Console.WriteLine($"Sum of the diagonal elements: {SumDiagonal(b_2d)}");
 
