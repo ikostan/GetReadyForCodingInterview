@@ -47,7 +47,7 @@ namespace Questin3
             Console.WriteLine("Question #3:\n");
 
             // True:
-            Console.WriteLine($"Test #1\n");
+            //Console.WriteLine($"Test #1\n");
             test1 = new int[4, 4] {
                 { 0, 1, 0, 0 },
                 { 0, 0, 1, 0 },
@@ -56,50 +56,50 @@ namespace Questin3
             };
             Console.WriteLine($"Test #1: {rooks_are_safe(test1)}");
 
-            //// False
+            // False
             //Console.WriteLine($"Test #2\n");
-            //test2 = new int[2, 2] {
-            //    { 1, 0 },
-            //    { 1, 0 }
-            //};
-            //Console.WriteLine($"Test #2: {rooks_are_safe(test2)}");
+            test2 = new int[2, 2] {
+                { 1, 0 },
+                { 1, 0 }
+            };
+            Console.WriteLine($"Test #2: {rooks_are_safe(test2)}");
 
-            //// False:
+            // False:
             //Console.WriteLine($"Test #3\n");
-            //test3 = new int[3, 3] {
-            //    { 0, 0, 0 },
-            //    { 1, 0, 1 },
-            //    { 0, 0, 0 }
-            //};
-            //Console.WriteLine($"Test #3: {rooks_are_safe(test3)}");
+            test3 = new int[3, 3] {
+                { 0, 0, 0 },
+                { 1, 0, 1 },
+                { 0, 0, 0 }
+            };
+            Console.WriteLine($"Test #3: {rooks_are_safe(test3)}");
 
-            //// True
+            // True:
             //Console.WriteLine($"Test #4\n");
-            //test4 = new int[4, 4] {
-            //    { 1, 0, 0, 0 },
-            //    { 0, 1, 0, 0 },
-            //    { 0, 0, 0, 1 },
-            //    { 0, 0, 0, 0 }
-            //};
-            //Console.WriteLine($"Test #4: {rooks_are_safe(test4)}");
+            test4 = new int[4, 4] {
+                { 1, 0, 0, 0 },
+                { 0, 1, 0, 0 },
+                { 0, 0, 0, 1 },
+                { 0, 0, 0, 0 }
+            };
+            Console.WriteLine($"Test #4: {rooks_are_safe(test4)}");
 
-            //// True
+            // True:
             //Console.WriteLine($"Test #5\n");
-            //test5 = new int[2, 2] {
-            //    { 1, 0 },
-            //    { 0, 1 }
-            //};
-            //Console.WriteLine($"Test #5: {rooks_are_safe(test5)}");
+            test5 = new int[2, 2] {
+                { 1, 0 },
+                { 0, 1 }
+            };
+            Console.WriteLine($"Test #5: {rooks_are_safe(test5)}");
 
-            //// False
+            // False:
             //Console.WriteLine($"Test #6\n");
-            //test6 = new int[4, 2] {
-            //    { 0, 0 },
-            //    { 0, 0 },
-            //    { 0, 0 },
-            //    { 1, 1 }
-            //};
-            //Console.WriteLine($"Test #6: {rooks_are_safe(test6)}");
+            test6 = new int[4, 2] {
+                { 0, 0 },
+                { 0, 0 },
+                { 0, 0 },
+                { 1, 1 }
+            };
+            Console.WriteLine($"Test #6: {rooks_are_safe(test6)}");
 
             Console.ReadKey();
         }
@@ -113,12 +113,13 @@ namespace Questin3
         {
             bool isSafe = true;
 
-            for (int row = 0; row < arr.Rank; row++)
+            for (int row = 0; row < arr.GetLength(0); row++)
             {
                 int rooks = 0;
-                for (int col = 0; col < arr.GetLength(row); col++)
+
+                for (int col = 0; col < arr.GetLength(1); col++)
                 {
-                    System.Diagnostics.Debug.WriteLine($"Rank: {arr.Rank} row: {row} col: {col} Length: {arr.GetLength(row)} rooks: {rooks}");
+                    System.Diagnostics.Debug.WriteLine($"Row: {row} col: {col} Length: {arr.GetLength(0)} rooks: {rooks}");
 
                     if (arr[row, col] == 1)
                     {
@@ -130,11 +131,6 @@ namespace Questin3
                         isSafe = false;
                         break;
                     }
-                }
-
-                if (!isSafe)
-                {
-                    break;
                 }
             }
 
@@ -149,6 +145,27 @@ namespace Questin3
         private static bool TestColumns(int[,] arr)
         {
             bool isSafe = true;
+
+            for (int col = 0; col < arr.GetLength(1); col++)
+            {
+                int rooks = 0;
+
+                for (int row = 0; row < arr.GetLength(0); row++)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Row: {row} col: {col} Length: {arr.GetLength(0)} rooks: {rooks}");
+
+                    if (arr[row, col] == 1)
+                    {
+                        rooks++;
+                    }
+
+                    if (rooks > 1)
+                    {
+                        isSafe = false;
+                        break;
+                    }
+                }
+            }
 
             return isSafe;
         }

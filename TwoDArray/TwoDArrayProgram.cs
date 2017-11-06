@@ -37,13 +37,13 @@ namespace TwoDArray
             // Problem 2: From the 2D array called b_2d, defined below, replace the number 6 with the number 99.
             a_2d[1, 1] = 99;
 
-            //Problem 3: Iterate over each item in c_2d and print it using the FOREACH syntax.
+            // Problem 3: Iterate over each item in c_2d and print it using the FOREACH syntax.
             foreach (var item in a_2d)
             {
                 Console.WriteLine(item);
             }
 
-            //Problem 4: Iterate over each item in d_2d and print it using the FOR syntax.
+            // Problem 4: Iterate over each item in d_2d and print it using the FOR syntax.
             for (int row = 0; row < a_2d.GetLength(0); row++)
             {
                 for (int col = 0; col < a_2d.GetLength(1); col++)
@@ -53,12 +53,12 @@ namespace TwoDArray
             }
 
             // Problem 5: You're given a 2D array with the same number of rows and columns.  
-            //Write a function that adds up the diagonal elements and returns the sum.
-            //For example, you're given the following 2D array:
+            // Write a function that adds up the diagonal elements and returns the sum.
+            // For example, you're given the following 2D array:
             //
             //[[1, 2, 3],  
-            //  [4, 5, 6],  
-            //  [7, 8, 9]]
+            // [4, 5, 6],  
+            // [7, 8, 9]]
             //
             // "The diagonal elements are 1, 5, and 9, so your function should return 15."
             int[,] b_2d = new int[3, 3] {
