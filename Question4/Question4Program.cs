@@ -30,12 +30,13 @@ namespace Question4
         /// </summary>
         /// <param name="args"></param>
 
-        private static int[,] arr2D_one, arr2D_two, arr2D_tree;
+        private static int[,] arr2D_one, arr2D_two, arr2D_tree, arr2D_four;
 
         static void Main(string[] args)
         {
             Console.WriteLine("Question #4:\n");
 
+            //#1:
             arr2D_one = new int[4, 4] {
                 { -4, -3, -1, 1 },
                 { -2, -2,  1, 2 },
@@ -49,6 +50,7 @@ namespace Question4
 
             Console.WriteLine();
 
+            //#2:
             arr2D_two = new int[2, 2] {
                 { -1, 0 },
                 {  0, 0 }
@@ -57,6 +59,29 @@ namespace Question4
             Console.WriteLine($"O(n2): {count_negatives_On2(arr2D_two)}");
 
             Console.WriteLine($"O(n): {count_negatives_On(arr2D_two)}");
+
+            Console.WriteLine();
+
+            //#3:
+            arr2D_tree = new int[2, 2] {
+                { -2, 0 },
+                { -1, 0 }
+            };
+
+            Console.WriteLine($"O(n2): {count_negatives_On2(arr2D_tree)}");
+
+            Console.WriteLine($"O(n): {count_negatives_On(arr2D_tree)}");
+
+            Console.WriteLine();
+
+            //#4:
+            arr2D_tree = new int[1, 1] {
+                { 0 }
+            };
+
+            Console.WriteLine($"O(n2): {count_negatives_On2(arr2D_tree)}");
+
+            Console.WriteLine($"O(n): {count_negatives_On(arr2D_tree)}");
 
             Console.WriteLine();
 
