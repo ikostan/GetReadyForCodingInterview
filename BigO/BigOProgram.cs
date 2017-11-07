@@ -42,7 +42,34 @@ namespace BigO
         {
             Console.WriteLine("Time Complexity and Big O:\n");
 
+            // 2O(n) = O(n)
+            // nO(n) = n(an + b) = an2 + bn = O(n2) //n2 => n square
+            // nO(x) = O(nx)
+            // yO(x) = O(yx)
 
+
+            /*
+             
+              Example:
+
+                array_2d = {{4, 7}, {1, 1}};
+                
+                int total(int[,] array_2d)
+                {
+                    int x = 0;                                                      ==> O(1)
+                    
+                    for(int row = 0; row < array_2d.GetLength(0); row++)            ==> nO(1) = O(n)
+                    {                                                                                  ==>    nO(n) = O(n2)
+                        for(int col = 0; col < array_2d.GetLength(0); col++)        ==> nO(1) = O(n)
+                        {
+                            x += array_2d[row, col]; 
+                        }
+                    }
+            
+                    return x;                                                        ==> O(1)
+                }
+              
+             */
 
             Console.ReadKey();
         }

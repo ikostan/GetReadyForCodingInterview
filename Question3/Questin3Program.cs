@@ -105,7 +105,7 @@ namespace Questin3
         }
 
         /// <summary>
-        /// Test rows.
+        /// Test rows. Big O: O(n2)
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>
@@ -138,7 +138,7 @@ namespace Questin3
         }
 
         /// <summary>
-        /// Test columns.
+        /// Test columns. Big O: O(n2)
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>
@@ -172,17 +172,19 @@ namespace Questin3
 
         /// <summary>
         /// Test if any of the rooks are able to attack any other ones.
+        /// Big O: 2O(n2) = O(n2) 
+        /// n2 is n square
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>
         private static bool rooks_are_safe(int[,] arr)
         {
-            if (!TestRows(arr))
+            if (!TestRows(arr)) // Big O: O(n2)
             {
                 System.Diagnostics.Debug.WriteLine("Case #1");
                 return false;
             }
-            else if (!TestColumns(arr))
+            else if (!TestColumns(arr)) // Big O: O(n2)
             {
                 System.Diagnostics.Debug.WriteLine("Case #2");
                 return false;
