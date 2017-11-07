@@ -37,7 +37,7 @@ namespace Question4
             Console.WriteLine("Question #4:\n");
 
             arr2D = new int[4, 4] {
-                { -4, -3, -1, 1 },
+                { -4, -3, -1, 0 },
                 { -2, -2,  1, 2 },
                 { -1,  1,  2, 3 },
                 {  1,  2,  4, 5 }
@@ -53,7 +53,7 @@ namespace Question4
 
         /// <summary>
         /// Function that takes this 2D array as the input and returns the number of negative numbers in it.
-        /// Big O: O(n2)
+        /// Big O: n2 x O(1) = O(n2)
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>
@@ -87,25 +87,23 @@ namespace Question4
         {
             int negatives = 0;
             int times = 0;
+            int lastIndexInColumn = arr.GetLength(1) - 1;
+            Debug.WriteLine($"Last Index In Column: {lastIndexInColumn}");
 
             for (int row = 0; row < arr.GetLength(0); row++)
             {
-                if (arr[row, 0] > -1)
-                {
-                    continue;
-                }
-
-                for (int col = 0; col < arr.GetLength(0); col++)
+                for (int col = lastIndexInColumn; col >= 0; col--)
                 {
                     times++;
 
-                    if (arr[row, col] > -1)
+                    Debug.WriteLine($"row: {row}, col: {col}, num: {arr[row, col]}, times: {times}");
+
+                    if (arr[row, col] < 0)
                     {
+                        int negNumsInRow = col + 1;
+                        negatives += negNumsInRow;
+                        Debug.WriteLine($"negatives: {negatives}");
                         break;
-                    }
-                    else 
-                    {
-                        negatives++;
                     }
                 }
             }
