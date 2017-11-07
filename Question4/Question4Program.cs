@@ -87,25 +87,38 @@ namespace Question4
         {
             int negatives = 0;
             int times = 0;
+
+            int lastIndexInRow = arr.GetLength(0) - 1;
             int lastIndexInColumn = arr.GetLength(1) - 1;
+
+            int col = lastIndexInColumn;
+            int row = 0;
+
             Debug.WriteLine($"Last Index In Column: {lastIndexInColumn}");
 
-            for (int row = 0; row < arr.GetLength(0); row++)
+            while (row <= lastIndexInRow)
             {
-                for (int col = lastIndexInColumn; col >= 0; col--)
+                Debug.WriteLine($"row: {row}, col: {col}");
+
+                if (arr[row, col] < 0) // Negative number found
                 {
-                    times++;
-
-                    Debug.WriteLine($"row: {row}, col: {col}, num: {arr[row, col]}, times: {times}");
-
-                    if (arr[row, col] < 0)
-                    {
-                        int negNumsInRow = col + 1;
-                        negatives += negNumsInRow;
-                        Debug.WriteLine($"negatives: {negatives}");
-                        break;
-                    }
+                    int numOfNegat = col + 1;
+                    negatives += numOfNegat;
+                    row++; // Row increment
+                    col = lastIndexInColumn;
                 }
+
+                if (col > 0)
+                {
+                    col--; // Column decrement
+                }
+                else if (col == 0)
+                {
+                    row++; // Row increment
+                    col = lastIndexInColumn;
+                }
+
+                times++;
             }
 
             Debug.WriteLine($"Times runned: {times}");
