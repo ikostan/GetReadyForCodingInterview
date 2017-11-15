@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace HashTableSample
 {
@@ -23,22 +24,86 @@ namespace HashTableSample
         {
             Console.WriteLine("Hash Table!");
 
+            Intro();
+
+            // Exercise Problems => 
+
+            // Problem 1: 
+            // Initialize a dictionary with the key, 'Amy', and the value, 28.  Call it a_dict.
+            Hashtable a_dict = new Hashtable();
+            a_dict.Add("Amy", 28);
+
+            // Problem 2: From the dictionary called b_dict, defined below, retrieve and print the 
+            // value that corresponds to the key 'Tom'.
+            Hashtable b_dict = new Hashtable();
+            b_dict.Add("Amy", 30);
+            b_dict.Add("Tom", "AGE UNKNOWN");
+            Console.WriteLine("{0}, {1}", "Tom", b_dict["Tom"]);
+
+            // Problem 3: Given the dictionary c_dict, defined below, add a new key called 'George' with the value 44.
+            Hashtable c_dict = new Hashtable();
+            c_dict.Add("Amy", 30);
+            c_dict.Add("Tom", "AGE UNKNOWN");
+            c_dict.Add("George", 44);
+            Console.WriteLine($"{"George"}, {c_dict["George"]}");
+
+            // Problem 4: Given a list of names, write a function that finds a value that appears twice in the list.
+            // For example, if you're given ['George', 'Tom', 'Emily', 'Jenny', 'Peter'].
+            // **Just assume that there's only one value that appears twice.**
+            Hashtable d_dict = new Hashtable();
+            d_dict.Add("George", 30);
+            d_dict.Add("Tom", 23);
+            d_dict.Add("Emily", 44);
+            d_dict.Add("Jenny", 21);
+            d_dict.Add("Peter", 30);
+
+            List<int> set = new List<int>();
+
+            foreach (DictionaryEntry item in d_dict)
+            {
+                int age = (int)item.Value;
+
+                if (!set.Contains(age))
+                {
+                    set.Add(age);
+                }
+                else
+                {
+                    Console.WriteLine($"Following age appears twice: {item.Value}, the name is: {item.Key}");
+                    break;
+                }
+            }
+
+            Console.ReadKey();
+        }
+
+
+        /// <summary>
+        /// Introduction
+        /// </summary>
+        private static void Intro()
+        {
             Hashtable ages = new Hashtable();
             ages.Add("Emily", 32);
-            Console.WriteLine($"Tom's age: {ages["Emily"]}"); // Takes Big O of 1 only
+            //Console.WriteLine($"Tom's age: {ages["Emily"]}"); // Takes Big O of 1 only
 
             ages.Add("Tom", 43);
-            Console.WriteLine($"Tom's age: {ages["Tom"]}");
+            //Console.WriteLine($"Tom's age: {ages["Tom"]}");
 
             ages.Add("George", 22);
-            Console.WriteLine($"Tom's age: {ages["George"]}");
+            //Console.WriteLine($"Tom's age: {ages["George"]}");
 
             ages.Add("Roi", 22);
-            Console.WriteLine($"Tom's age: {ages["Roi"]}");
+            //Console.WriteLine($"Tom's age: {ages["Roi"]}");
+
+            foreach (DictionaryEntry entry in ages)
+            {
+                Console.WriteLine("{0}, {1}", entry.Key, entry.Value);
+            }
 
             if (ages.ContainsKey("John")) // Takes Big O of 1 only
             {
-                Console.WriteLine($"Tom's age: {ages["John"]}"); 
+                Console.WriteLine($"Tom's age: {ages["John"]}");
             }
             else
             {
@@ -53,8 +118,7 @@ namespace HashTableSample
             {
                 Console.WriteLine($"There is no one with the age of 22.");
             }
-
-            Console.ReadKey();
         }
+
     }
 }
