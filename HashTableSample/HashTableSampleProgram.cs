@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace HashTableSample
 {
@@ -22,7 +23,15 @@ namespace HashTableSample
         {
             Console.WriteLine("Hash Table!");
 
+            Hashtable ages = new Hashtable();
+            ages.Add("Emily", 32);
+            Console.WriteLine($"Tom's age: {ages["Emily"]}"); // Takes Big O of 1 only
 
+            ages.Add("Tom", 43);
+            Console.WriteLine($"Tom's age: {ages["Tom"]}");
+
+            ages.Add("George", 22);
+            Console.WriteLine($"Tom's age: {ages["George"]}");
 
             Console.ReadKey();
         }
