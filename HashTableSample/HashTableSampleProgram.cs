@@ -33,6 +33,27 @@ namespace HashTableSample
             ages.Add("George", 22);
             Console.WriteLine($"Tom's age: {ages["George"]}");
 
+            ages.Add("Roi", 22);
+            Console.WriteLine($"Tom's age: {ages["Roi"]}");
+
+            if (ages.ContainsKey("John")) // Takes Big O of 1 only
+            {
+                Console.WriteLine($"Tom's age: {ages["John"]}"); 
+            }
+            else
+            {
+                Console.WriteLine($"There is no \"John\" in the list.");
+            }
+
+            if (ages.ContainsValue(22)) // Takes Big O of 1 only
+            {
+                Console.WriteLine($"Age of 22 found in the list.");
+            }
+            else
+            {
+                Console.WriteLine($"There is no one with the age of 22.");
+            }
+
             Console.ReadKey();
         }
     }
